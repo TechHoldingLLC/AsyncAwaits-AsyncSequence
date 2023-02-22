@@ -7,6 +7,9 @@
 
 import UIKit
 
+/* Screen where we are using AsyncSequence for fetching group of images and set it in grid.
+ */
+
 class GridWithAsyncSequence: UIViewController {
     
     //MARK: - IBOutlets
