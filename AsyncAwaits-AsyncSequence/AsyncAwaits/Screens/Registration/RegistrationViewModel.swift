@@ -10,6 +10,8 @@ import Foundation
 class RegistrationViewModel{
     private let authResource = AuthResource()
     
+    // Perfomrming Serial API call with using Task
+    
     func getUserRegistered(_ registartionRequest: RegistrationRequest) async throws -> RegisterationResponse? {
         do {
             return try await authResource.getUserRegistered(registartionRequest)

@@ -72,6 +72,9 @@ class HomeViewController: UIViewController {
     func loadHomeData(){
         deviceLoader.startAnimating()
         userLoader.startAnimating()
+        
+        // Performing Parrallel Async tasks
+        
         Task{
             do{
                 let result = try await viewModel.getUsers()
@@ -104,6 +107,9 @@ class HomeViewController: UIViewController {
     func loadData(){
         getTokenBtn.isHidden = true
         payrollLoader.startAnimating()
+        
+        // Performing serial API call where we are using one API response in second API
+        
         Task{
             do {
                 let result = try await viewModel.getPayroll()

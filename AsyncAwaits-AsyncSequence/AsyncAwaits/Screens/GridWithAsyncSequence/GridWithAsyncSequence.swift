@@ -52,6 +52,8 @@ class GridWithAsyncSequence: UIViewController {
                 URL(string: urlString)
             }.compactMap({ $0 })
             
+            // Using AsyncSequence implemented struct for performing loop async operations
+            
             for try await data in DataSequence(urls: urls){
                 self.imageData.append(data)
                 gridCollectionView.reloadData()

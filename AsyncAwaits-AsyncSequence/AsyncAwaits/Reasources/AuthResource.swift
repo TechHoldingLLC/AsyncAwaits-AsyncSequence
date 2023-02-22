@@ -7,6 +7,16 @@
 
 import Foundation
 struct AuthResource {
+    
+    /* Every Domain should have one separate resource for making each API call within that domain. It makes easy to find API call within that domain.
+        For Example we have
+     - AuthResource (for every auth releated API calls)
+     - EmployeeResource (for every Employees releated API calls)
+     - UserResource (for every Users releated API calls)
+     - DeviceResource (for every Devices releated API calls)
+    */
+    
+    
     func getToken() async throws -> AuthResponse {
         guard let url = Endpoint.getToken.url(for: .production) else{
             throw ApiError.invalidUrl

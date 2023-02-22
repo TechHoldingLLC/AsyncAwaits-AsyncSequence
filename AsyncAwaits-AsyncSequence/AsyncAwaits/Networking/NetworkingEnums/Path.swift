@@ -7,6 +7,9 @@
 
 import Foundation
 
+/* Set of Enums for different method types, different Enviornment, Api errors and Paths
+ */
+
 
 public enum Enviornment: Int {
     case production
@@ -42,6 +45,10 @@ enum ApiMethod: Int {
     }
 }
 
+/* We can have more than one Endpoint enums same as we have separate resource for each
+    domain.
+ */
+
 enum Endpoint {
     case getToken
     case getPayroll
@@ -71,6 +78,9 @@ enum Endpoint {
         let baseUrl = baseURLForEnviornment(host)
         return URL.init(string:"\(baseUrl)\(path)")
     }
+    
+    /* If we are using multiple enviornment
+     */
 
     func baseURLForEnviornment(_ enviornment: Enviornment) -> URL{
         switch enviornment {

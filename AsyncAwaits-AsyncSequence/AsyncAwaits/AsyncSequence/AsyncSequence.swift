@@ -8,6 +8,9 @@
 import Foundation
 import UIKit
 
+
+// Struct with AsyncSequence protocol implemented, we can use it for performing Async task in loop.
+
 struct DataSequence: AsyncSequence {
     typealias Element = Data
     let urls: [URL]
